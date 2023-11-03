@@ -3,6 +3,7 @@ import {
   getDatabase,
   ref,
   push,
+  onValue,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -23,6 +24,6 @@ addButtonEl.addEventListener("click", function () {
   console.log("sucessfully logged your result");
 });
 
-onValue(moviesInDB, function () {
+onValue(moviesInDB, (snapshot) => {
   console.log(snapshot);
 });
